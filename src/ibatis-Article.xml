@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"     
+"http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="article">
+    <typeAlias alias="ArticleDO" type="com.kuaileren.domain.ArticleDO" />
+	
+    <resultMap id="articleMap" class="ArticleDO">
+    	<result property="articleId" column="ARTICLE_ID"></result>
+    	<result property="title" column="TITLE"></result>
+    	<result property="content" column="CONTENT"></result>
+    	<result property="type" column="TYPE"></result>
+    	<result property="keyWord" column="KEY_WORD"></result>
+    	<result property="userId" column="USER_ID"></result>
+    	<result property="userName" column="USER_NAME"></result>
+    	<result property="createTime" column="CREATE_TIME"></result>
+    	<result property="modifyTime" column="MODIFY_TIME"></result>
+    	<result property="status" column="STATUS"></result>
+    	<result property="commentCount" column="COMMENT_COUNT"></result>
+    	<result property="favoriteCount" column="FAVORITE_COUNT"></result>
+    	<result property="agree" column="AGREE"></result>
+    	<result property="disAgree" column="DISAGREE"></result>
+    </resultMap>
+	   
+    <sql id="article_column">
+    	ARTICLE_ID,TITLE,CONTENT,TYPE,KEY_WORD,USER_ID,USER_NAME,CREATE_TIME,MODIFY_TIME,STATUS,COMMENT_COUNT,FAVORITE_COUNT,AGREE,DISAGREE
+    </sql>
+    
+    <select id="queryArticleList" parameterClass="ArticleDO" resultMap="articleMap">
+       select <include refid="article_column"/>  from ARTICLE 
+       <dynamic prepend="where">
+       <isNotNull prepend="and" property="type">
+               TYPE=#type#
+       </isNotNull>
+       <isNotEmpty prepend="and" property="userName">
+               USER_NAME=#userName#
+       </isNotEmpty>
+       <isGreaterThan prepend="and" property="userId" compareValue="1">
+               USER_ID=#userId#
+       </isGreaterThan>
+       </dynamic>
+       order by create_time desc
+    </select>
+    
+     <select id="countArticle" parameterClass="ArticleDO" resultClass="java.lang.Long">
+       select count(1) from ARTICLE
+       <dynamic prepend="where">
+       <isNotNull prepend="and" property="type">
+               TYPE=#type#
+       </isNotNull>
+       <isNotEmpty prepend="and" property="userName">
+               USER_NAME=#userName#
+       </isNotEmpty>
+       <isGreaterThan prepend="and" property="userId" compareValue="1">
+               USER_ID=#userId#
+       </isGreaterThan>
+       </dynamic>
+    </select>
+    
+     <select id="queryArticleByArticleId" parameterClass="java.lang.Integer" resultMap="articleMap">
+       select <include refid="article_column"/>  from ARTICLE where ARTICLE_ID=#articleId#
+    </select>
+
+	<select id="getLastArticleList" parameterClass="ArticleDO" resultMap="articleMap">
+       select <include refid="article_column"/>  from ARTICLE 
+          order by agree desc,comment_count desc
+    </select>
+
+
+    <update id="updateArticle" parameterClass="ArticleDO">
+      update ARTICLE set 
+      MODIFY_TIME=#modifyTime#
+      <isEqual prepend="," property="status" compareValue="1">
+         STATUS=#status#
+      </isEqual>
+      <isEqual prepend="," property="agree" compareValue="1">
+         AGREE=AGREE+1 
+      </isEqual>
+      <isEqual prepend="," property="disAgree" compareValue="1">
+         DISAGREE=DISAGREE+1 
+      </isEqual>
+       <isEqual prepend="," property="commentCount" compareValue="1">
+         COMMENT_COUNT=COMMENT_COUNT+1 
+      </isEqual>
+       <isEqual prepend="," property="favoriteCount" compareValue="1">
+         FAVORITE_COUNT=FAVORITE_COUNT+1 
+      </isEqual>
+      
+       where ARTICLE_ID=#articleId#
+    </update>
+    
+    <insert id="insertArticle" parameterClass="ArticleDO">
+       insert ARTICLE (<include refid="article_column"/>) 
+       values(
+         #articleId#,#title#,#content#,#type#,#keyWord#,#userId#,#userName#,#createTime#,#modifyTime#,#status#,#commentCount#,#commentCount#,#agree#,#disAgree#
+       )
+       <selectKey resultClass="java.lang.Integer" keyProperty="articleId">
+     		 <![CDATA[ SELECT ifnull(max(ARTICLE_ID),100)+1 from ARTICLE ]]>
+      </selectKey>
+    </insert>
+    
+    <select id="statisticsArticle" parameterClass="ArticleDO" resultClass="com.kuaileren.domain.KuaiLeDO">
+     <![CDATA[  SELECT count(user_id) as kuaiArticleCount,user_id as userId FROM article a   group by user_id order by kuaiArticleCount desc ]]>
+    </select>
+    
+    
+    
+</sqlMap>

@@ -1,0 +1,8 @@
+
+<div> 正在访问的商品列表</div>
+
+ #foreach($url in $list)
+ 		    <p>$url</p>
+ #end
+ 
+ 

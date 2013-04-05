@@ -1,0 +1,41 @@
+<div id="qiushi_counts_$article.articleId" class="qiushi_counts ">  
+		  
+		  <div class="counts">    
+   
+   <div style="display: inline;" class="score" id="score-$article.articleId">
+      <a id="up-$article.articleId" class="vote" href="javascript:vote2($article.articleId,1)">
+        <span id="pos-score-$article.articleId"><strong>$article.agree</strong></span>
+       </a>
+       <span style="" class="space">|</span>
+       <a id="dn-$article.articleId" class="down" href="javascript:vote2($article.articleId,-1)">
+         <span id="neg-score-$article.articleId"><strong>-$article.disAgree</strong></span>
+       </a>
+    </div>
+    
+     <span style="" class="space">|</span>  
+     <a title="登陆后才能收藏啊！" class="star" href="javascript:favorite($article.articleId);">
+     <span class="favorite-button" id="favorite$article.articleId"><strong>$article.favoriteCount</strong></span>
+            收藏</a>
+
+     <span class="space">|</span>
+     <a id="c-$article.articleId" class="comments" href="comment.htm#qiushi_comments_$article.commentCount"><strong>$article.commentCount</strong>条评论 </a>   
+ 
+ 		    <span style="" class="space">|</span>  
+     <span>$date.format($article.createTime)</span>
+     
+  </div> 
+  
+  <div class="datetime">     
+      <a title="分享到QQ空间" onclick='shareToQQ("$article.articleId");' href="javascript:void(0);">
+      <img style="vertical-align: middle;" alt="分享到QQ空间" src="$Klink.setURI('images/qz_logo.png')"></a>   
+      <a href="javascript:shareToSina($article.articleId)" title="分享到新浪微博" class="sina">
+      <img alt="分享到新浪微博" src="$Klink.setURI('images/tsina.png')"></a>
+      
+      <a href="javascript:postToQQWb($article.articleId)"  class="QQwb" title="分享到腾讯微博">
+      <img src="$Klink.setURI('images/weiboicon16.png')" align="absmiddle" border="0" alt="" />
+      </a>
+         
+  </div>  
+  
+</div>
+

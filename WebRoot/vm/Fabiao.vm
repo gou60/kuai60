@@ -1,0 +1,285 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+<head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=GBK" /> 
+  <title>分享快乐-快乐人</title> 
+  <meta http-equiv="X-UA-Compatible" content="IE=8"> 
+  <meta name="HandheldFriendly" content="True" /> 
+  <meta name="robots" content="all" />
+  <meta name="keywords" content="快乐，快乐人，快乐图，搞笑信息，有趣图片，搞笑图片，搞笑视频">
+  <meta name="description" content="快乐人网站是一个专业分享快乐事，快乐图，搞笑信息，有趣图片，搞笑图片，搞笑视频的网站-$!article.title">
+
+  
+    <link rel="Shortcut Icon" type="image/x-icon" href="$Klink.setURI('images/favicon.ico')" /> 
+    <link href="$Klink.setURI('css/kaixinbaishi.css?20110913')" media="screen" rel="stylesheet" type="text/css" />
+    <link href="$Klink.setURI('css/base.css?20110913')" media="screen" rel="stylesheet" type="text/css" />  
+
+<link rel="stylesheet" href="http://a.tbcdn.cn/tbsp/reset-grids.css?t=20090602.css" />
+<!-- start vmc css 3.1-->
+<link rel="stylesheet" href="http://a.tbcdn.cn/??p/global/1.0/global-min.css,p/global/1.0/header-min.css?t=2011091520110414.css" /><!-- end vmc css 3.1-->
+ 
+<link rel="stylesheet" type="text/css" href="http://a.tbcdn.cn/app/taoinfo/aitao/taoinfo_header_v2.css?t=20100428.css"/>
+ 
+<!-- start vmc js 3.1 -->
+<script src="http://a.tbcdn.cn/??s/kissy/1.1.6/kissy-min.js,p/global/1.0/global-min.js,p/global/1.0/header-min.js?t=2011091520110414.js"></script><!-- end vmc js 3.1 -->
+ 
+<link href="http://a.tbcdn.cn/s/kissy/1.1.7/editor/theme/base-min.css" rel="stylesheet"/>
+<!--[if lt IE 8]>
+<link href="http://a.tbcdn.cn/s/kissy/1.1.7/editor/theme/cool/editor-pkg-sprite-min.css" rel="stylesheet"/>
+<![endif]-->
+<!--[if gte IE 8]><!-->
+<link href="http://a.tbcdn.cn/s/kissy/1.1.7/editor/theme/cool/editor-pkg-min-datauri.css" rel="stylesheet"/>
+<!--<![endif]-->
+<link rel="stylesheet" type="text/css" href="http://a.tbcdn.cn/apps/group/css/post.css?t=20101117.css" />
+
+
+#set($loginUrl="$Klink.setURI('login.htm')")
+  #if(!$ToolsUtil.isLoginPage("$!request.getRequestURI()") && !$ToolsUtil.isLoginPage("$!request.getHeader('Referer')"))
+  #set($loginUrl="$Klink.setURI('login.htm').addQueryData('redirectUrl',$!request.getHeader('Referer'))")
+  #end
+ 
+  
+  <div id="topbar"> 
+	  	  <span style="MARGIN-LEFT:10px;display:inline;">
+	  	  #if("$!userDO.userName"=="" || "$!userDO.trackId"!="")
+  　   <a href="$loginUrl" class="login-href"> 芝麻开门 </a>一下， 我们将为您打开快乐之门！试试看？ 
+    #else
+    	<a href="logout.htm" class="login-href"> 芝麻关门 </a>后，下次还可以用 “<b>$userDO.userName</b>”做为身份啊！
+    #end
+    </span> 
+
+  <span id="toplogo" style="float:right;"><a href="$Klink.setURI('index.htm')" style="padding-right:5px">快乐人</a>
+  <a href="$Klink.setURI('index.htm').addQueryData('userId',$!userDO.userId)" style="padding-right:5px">我的快乐人</a>
+  <a href="$Klink.setURI('kuaileCenter.htm')">快乐中心</a>
+  </span> 
+
+  </div> 
+  <script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-19239443-2']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+</head> 
+
+
+
+<body> 
+
+<div id="container"> 
+<div id="center-container">
+  #parse("/vm/header.vm")
+<br>
+<div class="fabiao_body">
+
+  <div class="fabiao_input">
+  <form action="$Klink.setURI('addArticle.htm')" method="post" name="frm">
+      给个标题吧：<input type="text" name="title" value="$!article.title" maxlength="25" class="title_input">
+		      <textarea id="editor" name="content" tabindex="0" style="height:300px;" maxlength="1000">$!article.content</textarea> 
+      <div align="center"><br>
+        <input type="submit" name="sub" value="&nbsp;提&nbsp;交&nbsp;" class="fabiao_submit">
+      </div>
+  </form>
+  </div>
+</div> 
+<div id="" class="fabiao_counts"> 
+</div>
+</div>
+
+#parse("/vm/bottom.vm")
+</body>
+
+<script src="http://a.tbcdn.cn/s/kissy/1.1.7/??kissy-min.js,uibase/uibase-pkg-min.js,dd/dd-pkg-min.js,overlay/overlay-pkg-min.js,editor/editor-all-pkg-min.js"></script> 
+##<!--if you do not use ,do not include--> 
+<script src="http://a.tbcdn.cn/s/kissy/1.1.7/editor/biz/ext/editor-plugin-pkg-min.js"></script> 
+<script> 
+KISSY.ready(function(S) {
+ 
+    S.use('editor', function() {
+ 
+        var KE = KISSY.Editor;
+        var cfg = {
+            attachForm:true,
+            baseZIndex:10000,
+            //自定义样式
+            //customStyle:"p{color:purple;}",
+            //自定义外部样式
+            //customLink:["http://localhost/customLink.css","http://xx.com/y2.css"],
+            //是否一开始自动聚焦
+            //focus:true,
+            pluginConfig: {
+                "image":{
+                    upload:{
+                        serverUrl:"upload.htm",
+                        serverParams:{
+                            waterMark:function() {
+                                return S.one("#ke_img_up_watermark_1")[0].checked;
+                            }
+                        },
+                        surfix:"png,jpg,jpeg,gif",
+                        fileInput:"upload",
+                        sizeLimit:1000,//k
+                        extraHtml:"<p style='margin-top:10px;'><input type='checkbox' id='ke_img_up_watermark_1' checked='checked'> 图片加水印，防止别人盗用</p>"
+                    }
+                },
+                "flash":{
+                    defaultWidth:"300",
+                    defaultHeight:"300"
+                },
+                "templates": [
+                    {
+                        demo: "模板1效果演示html"  ,
+                        html: "<div style='border:1px solid red'>模板1效果演示html</div><p></p>"
+                    },
+                    {
+                        demo: "模板2效果演示html",
+                        html: "<div style='border:1px solid red'>模板2效果演示html</div>"
+                    }
+                ],
+                "multi-upload":{
+                    serverUrl:"/upload.htm",
+                    serverParams:{
+                        waterMark:function() {
+                            return S.one("#ke_img_up_watermark_2")[0].checked;
+                        }
+                    },
+                    //previewSuffix:"_60x60",
+                    previewWidth:"80px",
+                    sizeLimit:1000//k,
+                    ,numberLimit:15,
+                    extraHtml:"<p style='margin-top:10px;'>" +
+                            "<input type='checkbox' " +
+                            "style='vertical-align:middle;margin:0 5px;' " +
+                            "id='ke_img_up_watermark_2'>" +
+                            "<span style='vertical-align:middle;'>图片加水印，防止别人盗用</span></p>"
+                },
+                "video":{
+                    urlCfg:[
+                        {
+                            reg:/tudou\.com/i,
+                            url:"http://bangpai.taobao.com/json/getTudouVideo.htm?" +
+                                    "url=@url@&callback=@callback@"//"&rand=@rand@"
+                        }
+                    ],
+                    urlTip:"请输入优酷网、土豆网、酷7网的视频播放页链接...",
+                    providers:[
+                        {
+                            reg:/youku\.com/i,
+                            width:480,
+                            height:400,
+                            detect:function(url) {
+                                var m = url.match(/id_([^.]+)\.html$/);
+                                if (m) {
+                                    return "http://player.youku.com/player.php/sid/" + m[1] + "/v.swf";
+                                }
+                                m = url.match(/v_playlist\/([^.]+)\.html$/);
+                                if (m) {
+                                    return;
+                                    //return "http://player.youku.com/player.php/sid/" + m[1] + "/v.swf";
+                                }
+                                return url;
+                            }
+                        },
+                        {
+                            reg:/tudou\.com/i,
+                            width:480,
+                            height:400,
+                            detect:function(url) {
+                                return url;
+                            }
+                        },
+                        {
+                            reg:/ku6\.com/i,
+                            width:480,
+                            height:400,
+                            detect:function(url) {
+                                var m = url.match(/show[^\/]*\/([^.]+)\.html$/);
+                                if (m) {
+                                    return "http://player.ku6.com/refer/" + m[1] + "/v.swf";
+                                }
+                                return url;
+                            }
+                        }
+                    ]
+                },
+                music:{
+                    //必须和网址url同域而不是类库同域
+                    musicPlayer:KE.Config.base + "music/niftyplayer.swf"
+                },
+                "draft":{
+                    interval:5,
+                    limit:10,
+                    helpHtml:  "<div " +
+                            "style='width:200px;'>" +
+                            "<div style='padding:5px;'>草稿箱能够自动保存您最新编辑的内容，" +
+                            "如果发现内容丢失，" +
+                            "请选择恢复编辑历史</div></div>"
+                },
+                "resize":{
+                    direction:["y"]
+                },
+ 
+                dragupload:{
+                    surfix:"png,jpg,jpeg,gif",
+                    fileInput:"Filedata",
+                    sizeLimit:1000,
+                    serverUrl:"upload.htm",
+                    serverParams:{
+                        waterMark:function() {
+                            return true;
+                        }
+                    }
+                }
+            }
+        };
+ 
+ 
+        //if(1>2)
+        function test() {
+            window.editor2 = KE("#editor", S.clone(cfg)).use("elementpaths," +
+                    "sourcearea,preview," +
+                    "checkbox-sourcearea," +
+                    "templates,separator," +
+                    "undo,separator," +
+                    "removeformat,font,format,color,separator," +
+                    "list,indent," +
+                    "justify,separator,link," +
+                    "image,flash," +
+                    "video," +
+                    "music," +
+                    "xiami-music," +
+                    "smiley,separator,table,resize," +
+                    "draft," +
+                    "multi-upload," +
+                    "pagebreak,separator,maximize,dragupload");
+ 
+        }
+ 
+        test();
+        S.one('#destroy1').on("click", function(ev) {
+            ev.halt();
+            editor2.destroy();
+            editor2 = null;
+        });
+        S.one('#recover1').on("click", function(ev) {
+            ev.halt();
+            if (!editor2) {
+                test()
+            }
+ 
+        });
+ 
+        window.editor3 = KE("#editor2", S.clone(cfg)).use("separator,undo");
+    });
+});
+ 
+</script> 
+</html>

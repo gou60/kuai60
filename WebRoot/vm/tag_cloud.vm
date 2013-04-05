@@ -1,0 +1,25 @@
+#parse("/vm/top.vm")
+  
+  <link rel="stylesheet" type="text/css" href="$Klink.setURI('css/tag_cloud.css')" />
+		  <script type="text/javascript" src="$Klink.setURI('js/tag_cloud.js')"></script>
+
+<div id="container"> 
+<div id="center-container">
+
+  #parse("/vm/header.vm")
+ 
+<div id="cloud">
+ 
+<div id="tag_cloud">
+   #foreach($tags in $ToolsUtil.tag_cloud())
+     $tags
+   #end
+</div>
+
+</div>
+
+
+	</div> 
+</div><!-- container --> 
+
+</html> 

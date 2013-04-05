@@ -1,0 +1,22 @@
+
+<div id="bottom_space"> 
+	   <div id="bottom_text"> 
+		      <div id="bottom_col1"> <h2> <a href="$Klink.setURI('about.htm')" style="border: none;">关于快乐人</a></h2> 
+			         <div id="homecloud"> </div> 
+		      </div> 
+		
+		      <div id="bottom_col3">联系人：<a href="mailto:dev.lubang@gmail.com"></a><br>dev.lubang@gmail.com</div> 
+			   </div> 
+			   
+	   <div id="login-form"><a href="$!loginUrl" style="border:none;font-weight:bold;font-size:20px">芝麻开门 </a></div> 
+	
+	   <div id="copy">
+    Copyright&nbsp;2011  &nbsp;&nbsp; kuai60.com 内容版权所有 &nbsp;&nbsp;<a href="http://www.miibeian.gov.cn/" target="_blank">浙ICP备10208338号-2</a>
+    <br>
+	    </div> 
+</div>
+
+##<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" type="text/javascript"></script>
+<script src="$Klink.setURI('js/jquery.min.js')" type="text/javascript"></script>
+<script src="$Klink.setURI('js/application.js?20111015')" type="text/javascript"></script>
+<script src="$Klink.setURI('js/ajaxlogin.js')" type="text/javascript"></script> 

@@ -1,0 +1,61 @@
+
+<form name="pageform" id="pageform" action="select.htm?q" method="post">
+   <input type="text" name="myselect" id="myselect" value="$myselect">
+<select name="select" id="select1">
+<option value="11">11</option>
+<option value="12">12</option>
+</select>
+
+<select name="select" id="select2">
+<option value="21">21</option>
+<option value="22">22</option>
+</select>
+
+
+<select name="select" id="select3">
+<option value="31">31</option>
+<option value="32">32</option>
+</select>
+
+<input type="button" onclick="submit2()" value="submit">
+</form>
+
+<script>
+
+  function submit2(){
+  
+     var select = document.getElementsByName("select");
+     
+     var par = "";
+     
+     for(var i=1;i<=select.length;i++){
+     	   var sel = document.getElementById("select"+i);
+     	   console.info(sel.value);
+     	   par = par+sel.value+"_";
+     }
+    
+      par = par.substring(0,par.length-1);
+     
+      document.getElementById("myselect").value=par;
+      
+      document.getElementById("pageform").submit();
+
+     console.info(par);
+  
+  }
+  
+  
+   var myselect =  document.getElementById("myselect").value;
+   var arr = myselect.split("_");
+   
+			    var select = document.getElementsByName("select");
+     
+     for(var i=1;i<=select.length;i++){
+     	   var sel = document.getElementById("select"+i);
+     	   sel.value=arr[i-1];
+     }
+     
+  
+  
+  
+</script>

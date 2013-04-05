@@ -1,0 +1,32 @@
+
+<div id="qiushi_comments_$commentDO.articleId" class="qiushi_comments" data-article_id="$commentDO.articleId">
+<ul>
+
+	#foreach($comment in $commentDOList)
+ <li id="comment-$comment.commentId" data-user_id="$comment.userId" data-comment-id="$comment.commentId" data-floor="$comment.floor" class="comment floor-$comment.commentId " data-date="$date.format($comment.createTime)">
+ <img alt="$comment.userName" class="avatar" src="images/icon/$comment.userIconUrl()">
+ <a class="reply" href="javascript:replyComment($comment.articleId,$comment.userId,34)">回复</a> 
+ <sup class="floor">$comment.floor</sup>  
+ <sup class="date">$date.format($comment.createTime)</sup><span>
+   #if("$!{ToolsUtil.getUserInfoByUserId($comment.userId).trackId}"!="")
+			        快乐人_$comment.userId #else $!comment.userName #end
+		    $comment.content<br/></span>
+ </li>
+ #end
+
+</ul> 
+  <div class="reply_form">
+  	<form action="addComment.htm" name="frm$commentDO.articleId" method="post">
+    <input type="hidden" name="articleId" id="articleId" value="$commentDO.articleId"/>
+    <b class="username"></b>
+    <p style="zoom:1"><textarea rows="10" id="content" name="content" onpropertychange="if(this.scrollHeight>50){this.style.height=this.scrollHeight+'px';}"  oninput="if(this.scrollHeight>50){this.style.height=this.scrollHeight+'px';}" class="comment_input"></textarea></p>
+    <p><input type="submit" value="发表评论" name="commit" class="comment_submit" title="Ctrl + Enter可以快捷发表" />
+    <label><input type="checkbox" value="1" name="anony" id="anony"/>匿名</label>
+
+    </p>
+  </form>
+
+  <div class="login">您尚未登录，无法发表评论。<a href="/login" class="need-login">立即登录</a></div>
+  </div>
+  
+</div>

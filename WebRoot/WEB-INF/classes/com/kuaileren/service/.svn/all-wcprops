@@ -1,0 +1,83 @@
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/2/trunk/src/com/kuaileren/service
+END
+UserService.java
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/2/trunk/src/com/kuaileren/service/UserService.java
+END
+UserServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/5/trunk/src/com/kuaileren/service/UserServiceImpl.java
+END
+CommentService.java
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/2/trunk/src/com/kuaileren/service/CommentService.java
+END
+WriterServer.java
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/2/trunk/src/com/kuaileren/service/WriterServer.java
+END
+ArticleService.java
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/5/trunk/src/com/kuaileren/service/ArticleService.java
+END
+StatisticsSeviceJob.java
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/6/trunk/src/com/kuaileren/service/StatisticsSeviceJob.java
+END
+CommentServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/2/trunk/src/com/kuaileren/service/CommentServiceImpl.java
+END
+WriterServerImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/2/trunk/src/com/kuaileren/service/WriterServerImpl.java
+END
+ArticleServiceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/5/trunk/src/com/kuaileren/service/ArticleServiceImpl.java
+END
+InitServer.java
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/2/trunk/src/com/kuaileren/service/InitServer.java
+END
+InitServerImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/2/trunk/src/com/kuaileren/service/InitServerImpl.java
+END
+SearchServer.java
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/2/trunk/src/com/kuaileren/service/SearchServer.java
+END
+SearchServerImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/2/trunk/src/com/kuaileren/service/SearchServerImpl.java
+END

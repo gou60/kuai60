@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>   
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+
+<log4j:configuration xmlns:log4j='http://jakarta.apache.org/log4j/'>
+	<appender name="STDOUT" class="org.apache.log4j.ConsoleAppender">
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="[%d{dd HH:mm:ss,SSS\} %-5p] [%t] %c{2\} - %m%n" />
+		</layout>
+	</appender>
+
+	<appender name="activex_appender" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="File" value="D:\\www\\java\\2011dayun.com\\wwwlog\\kaixin.log" />
+		<param name="DatePattern" value="'.'yyyy-MM-dd'.log'" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="[%d{MMdd HH:mm:ss SSS\} %-5p] [%t] %c{3\} - %m%n" />
+		</layout>
+	</appender>
+	
+	<logger name="org.apache.commons.httpclient">
+		<level value="ERROR" />
+	</logger>
+	<logger name="httpclient.wire">
+		<level value="ERROR" />
+	</logger>
+
+	<logger name="com.kuaileren" additivity="false">
+		<level value="info" />
+		<appender-ref ref="activex_appender" />
+	</logger>
+	<root>
+		<appender-ref ref="STDOUT" />
+	</root>
+</log4j:configuration> 

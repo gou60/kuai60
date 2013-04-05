@@ -1,0 +1,50 @@
+#set($pageTitle="$!article.title -øÏ¿÷»À")
+#parse("/vm/top.vm")
+ 
+<body> 
+<div id="container"> 
+<div id="center-container">
+
+  #parse("/vm/header.vm")
+  
+<div class="body">
+  <table id="columns">
+	  <tbody><tr>
+		   <td id="main">
+		   
+   <div class="qiushi_body" style="min-height:800px;" id="article$article.articleId">
+		     <div class="head_pic">
+					       <a href="$Klink.setURI("index.htm").addQueryData("userId",$article.userId)" #if($articleDO.userId==0)target="_blank"#end>
+         <img src="$Klink.setURI("images/icon/$article.userIconUrl()")" class="icon_pic" alt="π˛π˛" title="$article.userName">
+       </a>
+     </div>
+     
+     <div class="article_title">
+      <!-- <h1><b>$!article.title </b></h	1> -->
+       #<a href="$Klink.setURI("showArticle.htm").addQueryData("articleId","$article.articleId")" id="url_$article.articleId">$!article.title</a>
+       <div class="title_line"  style="width:ToolUtil.getTitleLength($!article.title);">&nbsp;</div>
+     </div>
+     
+    <div class="thumb article">$article.content </div><br clear="both">
+   </div>
+   
+   
+#parse("/vm/counts.vm")
+	
+</td>
+
+		 <td id="sidebar">
+			   #parse("/vm/sidebar.vm")
+		  </td>
+	 </tr>
+</tbody></table>
+</div>
+
+
+
+	</div> <!-- center-container --> 
+</div><!-- container --> 
+
+#parse("/vm/bottom.vm")
+</body> 
+</html> 

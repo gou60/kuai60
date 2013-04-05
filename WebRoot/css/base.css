@@ -1,0 +1,246 @@
+
+body, div, label, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, p, blockquote, th, td {
+margin: 0;
+padding: 0;
+border: 0;
+outline: 0;
+}
+
+
+#columns{
+border:0;
+border-collapse:collapse;
+border-spacing:0;
+
+}
+td#main{
+width:732px;
+padding-bottom:10px;
+border:0;
+float:left;
+
+vertical-align:top;
+
+}
+
+.body{
+   margin:0px auto;
+   width:1000px;
+   background: #e0000d;
+   padding:5px 0 1px 0;
+}
+
+#sidebar{
+width:230px;
+padding:5px 10px 20px 20px;
+border-left:1px solid #b2d1a3;
+background: transparent url("../images/side_bg.gif") repeat-y scroll 0 0;
+vertical-align:top;
+font-color: #FFFACD;
+overflow:hidden;
+
+}
+
+#side_bar{
+ overflow:hidden;
+ padding:2px;
+}
+
+#bottom_space{
+background: url(../images/footer_bg.png) no-repeat scroll 0 0;
+border-top:3px solid #777; 
+color:#bbb; 
+font-size:12px;
+clear:both;
+}
+
+.side_line{
+  margin-top:7px;
+  margin-bottom:-3px;
+  background: transparent url(../images/side_line.gif)  no-repeat scroll 0 0;
+}
+
+#container {
+	-moz-background-clip:border;
+	-moz-background-inline-policy:continuous;
+	-moz-background-origin:padding;
+	background:#FFFFFF;
+	min-height:100%;
+	position:relative;
+	padding-bottom:15px;
+}
+
+.kuai60{
+  width:180px;
+  height:180px;
+  padding:5px;
+}
+
+.article_title{
+  float: left;
+  color:#F1AF00;
+  font-size:20px;
+  height:60px;
+  margin:0 auto;
+  overflow:hidden;
+  margin-top:10px;
+  position: relative;
+}
+
+.title_line{
+  background: transparent url(../images/side_line.gif)  no-repeat scroll 0 0;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
+.fabiao_body {
+   clear: both;
+   background: transparent url(../images/bg.gif) repeat scroll 0 0;
+	font-family: monospace;
+	border-top: 1px solid #ccc;
+	border-left: 1px solid #ccc;
+	border-right: 1px solid #ccc;
+
+	padding: 5px 10px;
+	width: 700px;
+	margin: 0 auto;
+	display:block;
+}
+
+
+.fabiao_counts {
+  font-family: Arial;
+   clear:both;
+    background: transparent url(../images/main_bg.png) repeat scroll 0 0;
+	border-bottom: 1px solid #ccc;
+	border-left: 1px solid #ccc;
+	border-right: 1px solid #ccc;
+
+	padding: 5px 10px 0;
+	height: 22px;
+	width: 700px;
+	margin: 0px auto;
+    zoom: 1;
+}
+
+
+#header {
+    -moz-background-inline-policy: continuous;
+    clear: both;
+    display: block;
+    padding: 105px 0 10px 250px;
+    width: 650px;
+	margin: 0 auto;
+}
+
+#nav_yuan a{
+ background: transparent url(../images/nav_yuan.gif) no-repeat scroll 0 0;
+ min-width:70px;
+ min-height:55px;
+ margin-left:10px;
+ margin-top:10px;
+}
+
+#nav_yuan a:hover {
+	background: transparent url(../images/nav_yuan-2.gif) no-repeat scroll 0 0;
+}
+
+#nav_tu a{
+ background: transparent url(../images/nav_tu.gif) no-repeat scroll 0 0;
+ min-width:100px;
+ margin-left:18px;
+ min-height:55px;
+ margin-top:10px;
+}
+#nav_tu a:hover {
+	background: transparent url(../images/nav_tu-2.gif) no-repeat scroll 0 0;
+}
+
+#nav_shi a{
+ background: transparent url(../images/nav_shi.gif) no-repeat scroll 0 0;
+ min-width:70px;
+ min-height:55px;
+ margin-top:10px;
+}
+#nav_shi a:hover {
+	background: transparent url(../images/nav_shi-2.gif) no-repeat scroll 0 0;
+}
+
+#nav_fen a{
+ background: transparent url(../images/nav_fen.gif) no-repeat scroll 0 0;
+ min-width:70px;
+ margin-left:5px;
+ text-decoration:none;
+ min-height:60px;
+}
+#nav_fen a:hover {
+	background: transparent url(../images/nav_fen-2.gif) no-repeat scroll 0 0;
+}
+
+#container-nav {
+    height: 50px;
+    margin-bottom: 12px;
+	margin-top:16px;
+    overflow: hidden;
+}
+#nav {
+	list-style-image:none;
+	list-style-position:outside;
+	list-style-type:none;
+	margin:0;
+	padding-left:20px;
+}
+#nav li {
+	float:left;
+	
+}
+
+#center-container_logo {
+    background: transparent url("../images/head_bg.gif") no-repeat scroll center 0 ;
+	margin: 0 auto;
+	width:1000px;
+}
+
+#nav li a, #nav li a:visited {
+	-x-system-font:none;
+	border-bottom:0px solid #FF8A00;
+	color:#383838;
+	float:left;
+	font-family: "Ó×Ô²", YaHeiConsolas, "Microsoft YaHei", "Î¢ÈíÑÅºÚ";
+	font-size:19px;
+	font-size-adjust:none;
+	font-stretch:normal;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:bold;
+	line-height:normal;
+	margin-right:10px;
+	padding-bottom:3px;
+	padding-top:10px;
+	text-decoration:none;
+}
+#nav li a:hover, #nav li a.current:visited, #nav li a.current, #nav li a.chosen:visited {
+	border-bottom:4px solid #FF8A00;
+	padding-bottom:1px;
+}
+.thumb{}
+
+.li_item{
+  font-weight:bold;
+  text-decoration:none;
+}
+
+
+
+
+#side_bar a:hover {
+  color:#595959;
+  text-decoration:underline;
+}
+
+.QQwb{
+ height:16px;
+ font-size:12px;
+ line-height:16px;
+}

@@ -1,0 +1,219 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script language="javascript">var g_begTime=new Date();</script>
+<style type="text/css">
+body,div,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td{margin:0;padding:0;font:normal 12px/1.231 Tahoma,Arial,"Simsun";color:#333}
+body{background:#FFF;}
+table{border-collapse:collapse;border-spacing:0}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal}strong{font-weight:800}ul,li{list-style:none}
+a{color:#2b4a78;text-decoration:none}a:hover{text-decoration:underline}a:focus{outline:none}
+.loginBox{position:relative; float:left; width:380px;border-right:1px solid #8E8E8C; margin-bottom:5px; }
+.checkNote{margin:0 0 6px 88px;*margin:-5px 0 9px 88px;color:#EF9800;line-height:17px}
+#login ul,#login li{margin:0;padding:0}
+#login a{color:#889db6}#g_list *,.btn{font:normal 12px/1.231 Tahoma,Arial,"Simsun"}
+u,em,i{font-style:normal;text-decoration:none}
+#login{padding:8px 0;margin:0 auto;width:571px;overflow:hidden;}
+#login ul li{width:100%;clear:both;list-style-type:none;padding-bottom:8px;padding-bottom:6px\9}
+#login ul li span{width:83px;float:left;text-align:right;padding-right:5px;padding-top:7px;padding-top:10px\9}
+#login #wb_tips,#login #verifytip{height:15px;*height:17px;_height:16px;overflow:hidden;margin-top:-5px;margin-top:-2px\9;color:gray}
+#login #verifyinput{padding-top:3px}
+#login #verifyshow{margin-top:-4px}
+#login label,#login u{vertical-align:middle;_vertical-align:baseline}
+.inputstyle{border:1px solid #7F9DB9;width:190px;height:17px;padding:4px 5px 6px;padding:5px\9;font-size:14px;vertical-align:middle;outline:none}
+.lineright{text-align:right;padding-right:7px}
+.login_button{margin-top:2px;*margin-top:-4px;margin-top:0\0;padding-left:88px}
+.login_btn{width:97px;padding:2px 0;*padding:4px 0 0;font-size:14px;font-weight:bold;cursor:pointer}
+.low_login{display:none;margin-left:5px}
+#verifyshow img{vertical-align:text-bottom}
+#low_login_enable{*margin:0 -3px 0 -4px;vertical-align:middle}
+#g_p,#verifyshow{margin-bottom:-1px;margin-bottom:0\9}
+.btn{width:97px;padding:2px 0;*padding:4px 0 0;font-size:14px;font-weight:bold;cursor:pointer}
+@media screen and (-webkit-min-device-pixel-ratio:0){#login #verifyinput{padding-top:4px}#g_p,#verifyshow{margin-bottom:-2px}}
+#label_uin,#label_pwd,#label_vcode{font-size:14px}
+
+.D label{ position:relative;}
+#web_login{overflow:visible;}
+.D .DTitle{ background:#f0f0f0; margin-bottom:20px; padding-top:8px; padding-bottom:5px;}
+.tbSendMsg td{ background:#fff}
+.Quick{ float:right; width:190px;}
+.quickbg{ display:block; background:url(http://mat1.gtimg.com/www/mb/images/quikbg.gif) no-repeat; width:115px; height:24px; margin:5px 0}
+.quick_tab{ width:190px;}
+.quick_tab td{ text-align:left; height:100%; width:160px; vertical-align:middle; padding:40px 0 0 40px; }
+
+</style>
+<script language="javascript">
+var str_uintip = "<请输入帐号>";
+var str_no_uin = "您还没有输入帐号！";
+var str_no_pwd = "您还没有输入密码！";
+var str_no_vcode = "您还没有输入验证码！";
+var str_inv_uin = "请输入正确的QQ帐号！";
+var str_inv_vcode = "请输入完整的验证码！";
+var str_switch_qlogin = "切换到快速登录模式";
+var str_switch_normal = "使用其他号码登录";
+var str_qlogin_no_uin = "系统检测到您机器上QQ未启动或已被锁定。请您先登录QQ或解锁后再使用本功能。";
+var str_qlogin_other_err  = "快速登录失败，请您返回重试或切换到普通登录模式。";
+var str_qlogin_select_offline = "您所选择号码对应的QQ已经失效，请检查该号码对应的QQ是否已经被关闭。";
+var str_qlogining = "正在登录中，请稍候……";
+var g_version=1008301700;var g_qtarget="-1";
+var g_href="http://ui.ptlogin2.qq.com/cgi-bin/login?hide_title_bar=1&no_verifyimg=1&link_target=blank&appid=46000101&target=self&f_url=loginerroralert&s_url=http://mini.t.qq.com/mblogin_ok.htm";var g_forget="http://ptlogin2.qq.com/ptui_forgetpwd";
+var g_css = "";var g_ptcss = "";
+var g_jumpname = "";var g_param = "";
+var isLoadVC = false;var g_appid = 46000101;var g_uin = 0;var g_domain = "qq.com";
+var g_target = "_self";var g_https = false;document.domain="qq.com";var g_t="str_uintip}";
+var g_lang="2052";
+function $(A){return document.getElementById(A)}var isAbleSubmit=false;function ptui_notifySize(B){try{obj=$(B);if(obj){width=1;height=1;if(obj.offsetWidth>0){width=obj.offsetWidth}if(obj.offsetHeight>0){height=obj.offsetHeight}if(parent.ptlogin2_onResizeMb){parent.ptlogin2_onResizeMb(width,height);window.scroll(0,10)}else{frameElement.width=width;frameElement.style.width=width+"px";frameElement.height=height;frameElement.style.height=height+"px";frameElement.style.visibility="hidden";frameElement.style.visibility="visible"}}}catch(A){}}var g_speedArray=new Array();var g_time={};g_time.time1=g_begTime;function ptui_setSpeed(B){if(B<=0){return }var A=g_speedArray.length;g_speedArray[A]=new Array(B,new Date())}function ptui_check_qlogin(){if(!window.ActiveXObject){return 0}try{var D=new ActiveXObject("SSOAxCtrlForPTLogin.SSOForPTLogin2");var F=D.CreateTXSSOData();D.InitSSOFPTCtrl(0,F);var E=D.CreateTXSSOData();var A=D.DoOperation(2,E);var B=A.GetArray("PTALIST");var C=B.GetSize();if(C>0){return C}}catch(G){return 0}return 0}var xuiFrame=false;var curXui=false;var reloadweb=false;var str2n = "使用其他号码登录";var q_clock;function qlogin_check(){q_clock=setInterval(B,200);var A=50;document.cookie="ptui_qstatus=1;domain=ptlogin2."+g_domain;function B(){if(A==0){switchpage()}if(document.cookie.indexOf("ptui_qstatus=2")>-1){clearInterval(q_clock)}if(document.cookie.indexOf("ptui_qstatus=3")>-1){clearInterval(q_clock);switchpage()}A--}}function loadxui(G){if(xuiFrame){$("qlogin").style.display="block";return }else{var B=1;if(g_jumpname!=""){if(g_qtarget!=-1){B=parseInt(g_qtarget)}}else{switch(g_target){case"_self":B=0;break;case"_top":B=1;break;case"_parent":B=2;break;default:B=1}}var F="";if(g_jumpname==""||g_jumpname=="jump"){F=encodeURIComponent("u1="+document.forms[0].u1.value)}var E="qlogin";var A="http://xui.ptlogin2."+g_domain+"/cgi-bin/"+E+"?domain="+g_domain+"&lang="+g_lang+"&qtarget="+B+"&jumpname="+g_jumpname+"&ptcss="+g_ptcss+"&param="+encodeURIComponent((g_param?encodeURIComponent(g_param):F))+"&css="+g_css+"#"+(g_begTime-0);var D=$("qlogin");var C=136;if(G>5){G=5}C+=28*(G-1);D.innerHTML='<iframe id="xui" name="xui" allowtransparency="true" scrolling="no" frameborder="0" width="100%" height="'+C+'" src="'+A+'">';D.style.display="block";$("web_login").style.display="none";curXui=true;xuiFrame=true;qlogin_check()}}function switchpage(){if(curXui){$("web_login").style.display="block";$("qlogin").style.display="none";$("switch").innerHTML='<a style="cursor:pointer;" onclick="switchpage();">'+str_switch_qlogin+"</a>";ptui_notifySize("login");if(typeof (ptui_initFocus)!="undefined"){ptui_initFocus(document.forms[0])}curXui=false;clearInterval(q_clock)}else{$("qlogin").style.display="block";$("web_login").style.display="none";$("switch").innerHTML='<a style="cursor:pointer;" onclick="switchpage();">'+str_switch_normal+"</a>";curXui=true;qlogin_check();ptui_notifySize("login")}}function ptui_onUserFocus(C,A){var B=$(C);if(str_uintip==B.value){B.value=""}B.style.color=A}function ptui_onUserBlue(C,A){var B=$(C);if(""==B.value){B.value=str_uintip;B.style.color=A}};
+str_uintip="<请输入帐号>";
+function loadweblogin(){
+    if(typeof(ptui_setUinColor)=='undefined'){
+        reloadweb = true;
+        return;
+    }
+    ptui_setUinColor('u', '#000000', '#cccccc');
+
+    $("loginform").verifycode.value="";
+}
+function onSelectLoad() {
+    var A = 0;
+    if (document.cookie.toLowerCase().indexOf("pt_qlogincode=5") > -1) {
+        A = 0
+    } else {
+        A = ptui_check_qlogin()
+    }
+    if (A > 0) {
+        loadxui(A);
+        if ($("label_unable_tips")) {
+            $("label_unable_tips").innerHTML = ""
+        }
+        if ($("switch")) {
+            $("switch").innerHTML = '<a style="cursor:pointer;" onclick="switchpage();">' + str2n + "</a>";
+            $("switch").style.display = "block"
+        }
+    } else {
+        if ($("label_unable_tips")) {
+            $("label_unable_tips").innerHTML = ""
+        }
+        if ($("switch")) {
+            $("switch").style.display = "none"
+        }
+    }
+    ptui_setSpeed(1);
+    ptui_notifySize("login")
+}
+function onPrePageLoad(){
+    var login_form = $("loginform");
+    
+    $("changeimg_link").href="javascript:ptui_changeImg('qq.com', 46000101, true);";
+    $("login_button").disabled=false;
+    ptui_setDefUin(login_form, "");
+    ptui_setSpeed(2);   
+    var reportTime4=0;try{if(location.hash){reportTime4=location.hash.substr(1,location.hash.length)};}catch(e){var f = arguments.callee;setTimeout(f, 50);}ptui_reportSpeed(g_begTime,reportTime4);g_time.time4=new Date();webLoginReport();
+    ptui_notifySize("login");
+    if(!curXui){ptui_initFocus(login_form);}
+}
+</script>
+
+</head>
+<body>
+<div class="main" id=login style="border:0px;">
+    <div class="loginBox">
+    <table border="0" cellspacing="0" cellpadding="0">
+    <tbody><tr>
+    <td>
+        <div id="qlogin" style="display:none;"></div>
+        <div id="web_login">
+            <form id="loginform" autocomplete="off" name="loginform" action="http://ptlogin2.qq.com/login" method="post" 
+            onsubmit="if(!isAbleSubmit){return false;};return ptui_onLoginEx(loginform, 'qq.com')" onreset="return onFormReset(loginform)" target="_self" style="margin:0px;">
+              <ul id="g_list">
+                <li id="g_u"><span><u id="label_uin">帐　号：</u></span>
+                <input type="text" class="inputstyle" id="u" name="u" value="" tabindex="1" 
+                  onblur="check();" /></li>
+                <li id=wb_tips><span></span>支持微博帐号/QQ号/邮箱/手机号登录</li>
+                <li id="g_p"><span><u id="label_pwd">密　码：</u></span>
+                  <input type="password"  class="inputstyle" id="p" name="p" value="" maxlength="16" tabindex="2" onfocus="check();" />       
+                  <label><a target="_blank" tabindex="8" href="http://ptlogin2.qq.com/ptui_forgetpwd" onclick="onClickForgetPwd()" id="label_forget_pwd">忘了密码？</a></label></li>
+                <li id="verifyinput" style="display:none;"><span for="code"><u id="label_vcode">验证码：</u></span>
+                <input name="verifycode" type="text" style="ime-mode:disabled" class="inputstyle" id="verifycode" value="" maxlength="5" tabindex="3"/></li>
+                <li id="verifytip" style="display:none;"><span>&nbsp;</span>
+                <u id="label_vcode_tip">输入下图中的字符，不区分大小写</u></li>
+                <li id="verifyshow" style="display:none;"><span for="pic">&nbsp;</span> 
+                <img id=imgVerify width='130' height='53' onload='imgLoadReport()'>
+                 
+                 <label><a id="changeimg_link" tabindex="6" >看不清，换一张</a></label>
+                </li>
+                <li><span>&nbsp;</span>
+                    <label title="为了确保您的信息安全，不建议在网吧等公共环境勾选此项" for="low_login_enable">
+                        <input id="low_login_enable" tabindex="4" value="1" type="checkbox" name="low_login_enable" checked="checked" />
+                        <u id="label_remember_pwd">下次自动登录</u></label>
+                    <label class="low_login">
+                        <select disabled="disabled" name="low_login_hour">
+                            <option id="label_1_month" selected="selected" value="720">一个月</option>
+                        </select>
+                    </label>
+                 </li>
+              </ul>
+              <div class="checkNote">本机两周内有效，请不要在网吧或公用电脑上使用</div>
+              <div class="login_button">
+             <input type="submit" tabindex="5"  disabled="disabled" value="登 录"  class="btn" id="login_button" />
+
+            </div>
+            <div class="lineright" id="label_unable_tips"><span id="label_qlogin_tips" ><img src="http://imgcache.qq.com/ptlogin/v4/style/0/images/load.gif" align="absmiddle"> 
+            正在检测能否快速登录...</span></div>
+            <input type="hidden" name="aid" value="46000101" />
+            <input type="hidden" name="u1" id="u1" value="http://mini.t.qq.com/invite/quick.php" />
+            <input type="hidden" name="fp" value="loginerroralert" />
+            <input type="hidden" name="h" value="1" />
+            <input type="hidden" name="ptredirect" value="0" />
+            <input type="hidden" name="ptlang" value="2052" />
+
+            <input type="hidden" name="from_ui" value="1" />
+            <input type="hidden" name="dumy" value="" />
+            </form>
+        </div>
+        <div id="switch" class="lineright"><a onclick=""></a></div>
+    </td>
+    </tr>
+    </tbody></table></div>
+    <div class="Quick">
+    <table border="0" cellspacing="0" cellpadding="0" class="quick_tab">
+    <tbody><tr><td>
+    还没有开通微博？
+    <a href="http://mini.t.qq.com/invite/quick.php" class="quickbg" id="quick"></a>
+    <a href="http://t.qq.com/reg/index.php" target="_blank">电子邮箱开通</a>
+    </td></tr></tbody></table>
+    </div>
+</div>
+<script language="javascript">g_time.time3=new Date();</script> 
+<script>onSelectLoad();</script>
+<script language="javascript" charset="utf-8" src="http://imgcache.qq.com/ptlogin/ac/v9/js/comm.js?v=1.9.5"></script>
+<script language="javascript">
+function ptui_checkQQUin(qquin){if(qquin.length==0){return false}qquin=ptui_trim(qquin);if(t_appid==g_appid){if((new RegExp(/^[a-zA-Z]{1}([a-zA-Z0-9]|[-_]){0,19}$/).test(qquin))){return true}}if(!(new RegExp(/^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z0-9]+$/).test(qquin))){if(qquin.length<5||qquin.length>12||parseInt(qquin)<1000){return false}var exp=eval("/^[0-9]*$/");return exp.test(qquin)}return true}
+function cleanCache(f){
+    var t=document.createElement("iframe");
+    if(f.split("#").length == 3) f = f.substring(0,f.lastIndexOf("#"));
+    t.src = f;
+    t.style.display = "none";
+    document.body.appendChild(t);
+}
+
+onPrePageLoad();
+if(reloadweb){
+    loadweblogin();
+}
+function onPageClose(){ptui_notifyClose();}
+function ptuiV(v){
+    if (v>g_version){
+        cleanCache("http://imgcache.qq.com/ptlogin/ac/v7/clearcache.html#"+location.href);  
+    }
+}
+</script>
+<script type="text/javascript">
+try{
+    if(parent.MI.Login.from){
+        document.getElementById('u1').value += '?pref=' + parent.MI.Login.from;
+        document.getElementById('quick').setAttribute('href',document.getElementById('quick').getAttribute('href') + '?pref=' + parent.MI.Login.from);
+    }
+}catch(e){}
+</script>
+</body>
+</html>

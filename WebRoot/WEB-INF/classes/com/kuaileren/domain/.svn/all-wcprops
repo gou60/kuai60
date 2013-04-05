@@ -1,0 +1,77 @@
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/2/trunk/src/com/kuaileren/domain
+END
+VoteDO.java
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/2/trunk/src/com/kuaileren/domain/VoteDO.java
+END
+UserDO.java
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/5/trunk/src/com/kuaileren/domain/UserDO.java
+END
+FavoriteDO.java
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/2/trunk/src/com/kuaileren/domain/FavoriteDO.java
+END
+IndexSearchFilter.java
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/2/trunk/src/com/kuaileren/domain/IndexSearchFilter.java
+END
+SearchResultPO.java
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/2/trunk/src/com/kuaileren/domain/SearchResultPO.java
+END
+IndexConstants.java
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/2/trunk/src/com/kuaileren/domain/IndexConstants.java
+END
+CommentDO.java
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/2/trunk/src/com/kuaileren/domain/CommentDO.java
+END
+ArticleDO.java
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/2/trunk/src/com/kuaileren/domain/ArticleDO.java
+END
+CountInfoDO.java
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/2/trunk/src/com/kuaileren/domain/CountInfoDO.java
+END
+UserQueryDO.java
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/2/trunk/src/com/kuaileren/domain/UserQueryDO.java
+END
+CountDO.java
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/5/trunk/src/com/kuaileren/domain/CountDO.java
+END
+KuaiLeDO.java
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/5/trunk/src/com/kuaileren/domain/KuaiLeDO.java
+END

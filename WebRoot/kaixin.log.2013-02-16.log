@@ -1,0 +1,141 @@
+[0216 03:36:55 530 ERROR] ["http-bio-80"-exec-179] kuaileren.web.ArticleAction - SqlMapClient operation; SQL [];   
+--- The error occurred in ibatis-Vote.xml.  
+--- The error occurred while applying a parameter map.  
+--- Check the vote.insertVote-InlineParameterMap.  
+--- Check the statement (update failed).  
+--- Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Duplicate entry '114' for key 'PRIMARY'; nested exception is com.ibatis.common.jdbc.exception.NestedSQLException:   
+--- The error occurred in ibatis-Vote.xml.  
+--- The error occurred while applying a parameter map.  
+--- Check the vote.insertVote-InlineParameterMap.  
+--- Check the statement (update failed).  
+--- Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Duplicate entry '114' for key 'PRIMARY'
+org.springframework.dao.DataIntegrityViolationException: SqlMapClient operation; SQL [];   
+--- The error occurred in ibatis-Vote.xml.  
+--- The error occurred while applying a parameter map.  
+--- Check the vote.insertVote-InlineParameterMap.  
+--- Check the statement (update failed).  
+--- Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Duplicate entry '114' for key 'PRIMARY'; nested exception is com.ibatis.common.jdbc.exception.NestedSQLException:   
+--- The error occurred in ibatis-Vote.xml.  
+--- The error occurred while applying a parameter map.  
+--- Check the vote.insertVote-InlineParameterMap.  
+--- Check the statement (update failed).  
+--- Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Duplicate entry '114' for key 'PRIMARY'
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.doTranslate(SQLErrorCodeSQLExceptionTranslator.java:228)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:72)
+	at org.springframework.orm.ibatis.SqlMapClientTemplate.execute(SqlMapClientTemplate.java:212)
+	at org.springframework.orm.ibatis.SqlMapClientTemplate.insert(SqlMapClientTemplate.java:397)
+	at com.kuaileren.dao.ArticleDaoImpl.addVote(ArticleDaoImpl.java:64)
+	at com.kuaileren.service.ArticleServiceImpl.articleVote(ArticleServiceImpl.java:123)
+	at com.kuaileren.web.ArticleAction.articleVote(ArticleAction.java:142)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at com.opensymphony.xwork2.DefaultActionInvocation.invokeAction(DefaultActionInvocation.java:440)
+	at com.opensymphony.xwork2.DefaultActionInvocation.invokeActionOnly(DefaultActionInvocation.java:279)
+	at com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:242)
+	at com.opensymphony.xwork2.interceptor.DefaultWorkflowInterceptor.doIntercept(DefaultWorkflowInterceptor.java:163)
+	at com.opensymphony.xwork2.interceptor.MethodFilterInterceptor.intercept(MethodFilterInterceptor.java:87)
+	at com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:236)
+	at com.opensymphony.xwork2.validator.ValidationInterceptor.doIntercept(ValidationInterceptor.java:249)
+	at org.apache.struts2.interceptor.validation.AnnotationValidationInterceptor.doIntercept(AnnotationValidationInterceptor.java:68)
+	at com.opensymphony.xwork2.interceptor.MethodFilterInterceptor.intercept(MethodFilterInterceptor.java:87)
+	at com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:236)
+	at com.opensymphony.xwork2.interceptor.ConversionErrorInterceptor.intercept(ConversionErrorInterceptor.java:122)
+	at com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:236)
+	at com.opensymphony.xwork2.interceptor.ParametersInterceptor.doIntercept(ParametersInterceptor.java:195)
+	at com.opensymphony.xwork2.interceptor.MethodFilterInterceptor.intercept(MethodFilterInterceptor.java:87)
+	at com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:236)
+	at com.opensymphony.xwork2.interceptor.ParametersInterceptor.doIntercept(ParametersInterceptor.java:195)
+	at com.opensymphony.xwork2.interceptor.MethodFilterInterceptor.intercept(MethodFilterInterceptor.java:87)
+	at com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:236)
+	at com.opensymphony.xwork2.interceptor.StaticParametersInterceptor.intercept(StaticParametersInterceptor.java:148)
+	at com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:236)
+	at org.apache.struts2.interceptor.CheckboxInterceptor.intercept(CheckboxInterceptor.java:93)
+	at com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:236)
+	at org.apache.struts2.interceptor.FileUploadInterceptor.intercept(FileUploadInterceptor.java:235)
+	at com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:236)
+	at com.opensymphony.xwork2.interceptor.ModelDrivenInterceptor.intercept(ModelDrivenInterceptor.java:89)
+	at com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:236)
+	at com.opensymphony.xwork2.interceptor.ScopedModelDrivenInterceptor.intercept(ScopedModelDrivenInterceptor.java:128)
+	at com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:236)
+	at org.apache.struts2.interceptor.ProfilingActivationInterceptor.intercept(ProfilingActivationInterceptor.java:104)
+	at com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:236)
+	at org.apache.struts2.interceptor.debugging.DebuggingInterceptor.intercept(DebuggingInterceptor.java:267)
+	at com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:236)
+	at com.opensymphony.xwork2.interceptor.ChainingInterceptor.intercept(ChainingInterceptor.java:126)
+	at com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:236)
+	at com.opensymphony.xwork2.interceptor.PrepareInterceptor.doIntercept(PrepareInterceptor.java:138)
+	at com.opensymphony.xwork2.interceptor.MethodFilterInterceptor.intercept(MethodFilterInterceptor.java:87)
+	at com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:236)
+	at com.opensymphony.xwork2.interceptor.I18nInterceptor.intercept(I18nInterceptor.java:148)
+	at com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:236)
+	at org.apache.struts2.interceptor.ServletConfigInterceptor.intercept(ServletConfigInterceptor.java:164)
+	at com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:236)
+	at com.opensymphony.xwork2.interceptor.AliasInterceptor.intercept(AliasInterceptor.java:128)
+	at com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:236)
+	at com.opensymphony.xwork2.interceptor.ExceptionMappingInterceptor.intercept(ExceptionMappingInterceptor.java:176)
+	at com.opensymphony.xwork2.DefaultActionInvocation.invoke(DefaultActionInvocation.java:236)
+	at org.apache.struts2.impl.StrutsActionProxy.execute(StrutsActionProxy.java:52)
+	at org.apache.struts2.dispatcher.Dispatcher.serviceAction(Dispatcher.java:468)
+	at org.apache.struts2.dispatcher.FilterDispatcher.doFilter(FilterDispatcher.java:395)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:243)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:240)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:164)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:462)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:164)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:100)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:395)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:250)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:188)
+	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:302)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: com.ibatis.common.jdbc.exception.NestedSQLException:   
+--- The error occurred in ibatis-Vote.xml.  
+--- The error occurred while applying a parameter map.  
+--- Check the vote.insertVote-InlineParameterMap.  
+--- Check the statement (update failed).  
+--- Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Duplicate entry '114' for key 'PRIMARY'
+	at com.ibatis.sqlmap.engine.mapping.statement.GeneralStatement.executeUpdate(GeneralStatement.java:91)
+	at com.ibatis.sqlmap.engine.impl.SqlMapExecutorDelegate.insert(SqlMapExecutorDelegate.java:447)
+	at com.ibatis.sqlmap.engine.impl.SqlMapSessionImpl.insert(SqlMapSessionImpl.java:82)
+	at org.springframework.orm.ibatis.SqlMapClientTemplate$9.doInSqlMapClient(SqlMapClientTemplate.java:399)
+	at org.springframework.orm.ibatis.SqlMapClientTemplate.execute(SqlMapClientTemplate.java:209)
+	... 71 more
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Duplicate entry '114' for key 'PRIMARY'
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:409)
+	at com.mysql.jdbc.Util.getInstance(Util.java:384)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1041)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3566)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3498)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:1959)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2113)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2568)
+	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:2113)
+	at com.mysql.jdbc.PreparedStatement.execute(PreparedStatement.java:1364)
+	at sun.reflect.GeneratedMethodAccessor95.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at com.ibatis.common.jdbc.logging.PreparedStatementLogProxy.invoke(PreparedStatementLogProxy.java:62)
+	at $Proxy6.execute(Unknown Source)
+	at com.ibatis.sqlmap.engine.execution.SqlExecutor.executeUpdate(SqlExecutor.java:81)
+	at com.ibatis.sqlmap.engine.mapping.statement.GeneralStatement.sqlExecuteUpdate(GeneralStatement.java:200)
+	at com.ibatis.sqlmap.engine.mapping.statement.GeneralStatement.executeUpdate(GeneralStatement.java:78)
+	... 75 more
+[0216 05:00:00 014 INFO ] [org.springframework.scheduling.quartz.SchedulerFactoryBean#0_Worker-3] kuaileren.service.SearchServerImpl - KuaiLeDO[userId:26,userName:null,userIconUrl:Q 11.gif,kuaiLeCount:0,kuaiArticleCount:46,loginKuaiLeCount:0]
+[0216 05:00:00 014 INFO ] [org.springframework.scheduling.quartz.SchedulerFactoryBean#0_Worker-3] kuaileren.service.SearchServerImpl - KuaiLeDO[userId:31,userName:null,userIconUrl:Q 02.gif,kuaiLeCount:0,kuaiArticleCount:44,loginKuaiLeCount:0]
+[0216 05:00:00 014 INFO ] [org.springframework.scheduling.quartz.SchedulerFactoryBean#0_Worker-3] kuaileren.service.SearchServerImpl - KuaiLeDO[userId:30,userName:null,userIconUrl:B 13.gif,kuaiLeCount:0,kuaiArticleCount:20,loginKuaiLeCount:0]
+[0216 05:00:00 014 INFO ] [org.springframework.scheduling.quartz.SchedulerFactoryBean#0_Worker-3] kuaileren.service.SearchServerImpl - KuaiLeDO[userId:36,userName:null,userIconUrl:missing.png,kuaiLeCount:0,kuaiArticleCount:17,loginKuaiLeCount:0]
+[0216 05:00:00 014 INFO ] [org.springframework.scheduling.quartz.SchedulerFactoryBean#0_Worker-3] kuaileren.service.SearchServerImpl - KuaiLeDO[userId:38716,userName:null,userIconUrl:missing.png,kuaiLeCount:0,kuaiArticleCount:16,loginKuaiLeCount:0]
+[0216 05:00:00 014 INFO ] [org.springframework.scheduling.quartz.SchedulerFactoryBean#0_Worker-3] kuaileren.service.SearchServerImpl - KuaiLeDO[userId:405,userName:null,userIconUrl:missing.png,kuaiLeCount:0,kuaiArticleCount:16,loginKuaiLeCount:0]
+[0216 05:00:00 014 INFO ] [org.springframework.scheduling.quartz.SchedulerFactoryBean#0_Worker-3] kuaileren.service.SearchServerImpl - KuaiLeDO[userId:1445,userName:null,userIconUrl:missing.png,kuaiLeCount:0,kuaiArticleCount:15,loginKuaiLeCount:0]
+[0216 05:00:00 014 INFO ] [org.springframework.scheduling.quartz.SchedulerFactoryBean#0_Worker-3] kuaileren.service.SearchServerImpl - KuaiLeDO[userId:28,userName:null,userIconUrl:Q 02.gif,kuaiLeCount:0,kuaiArticleCount:14,loginKuaiLeCount:0]
+[0216 05:00:00 014 INFO ] [org.springframework.scheduling.quartz.SchedulerFactoryBean#0_Worker-3] kuaileren.service.SearchServerImpl - Í³¼Æ½áÊø£º

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"     
+"http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="comment">
+    <typeAlias alias="CommentDO" type="com.kuaileren.domain.CommentDO" />
+	   
+    <resultMap id="commentMap" class="CommentDO">
+    	<result property="commentId" column="COMMENT_ID"></result>
+    	<result property="content" column="CONTENT"></result>
+    	<result property="userId" column="USER_ID"></result>
+    	<result property="userName" column="USER_NAME"></result>
+    	<result property="createTime" column="CREATE_TIME"></result>
+    	<result property="modifyTime" column="MODIFY_TIME"></result>
+    	<result property="status" column="STATUS"></result>
+    	<result property="articleId" column="ARTICLE_ID"></result>
+    	<result property="floor" column="FLOOR"></result>
+    	<result property="anony" column="ANONY"></result>
+    </resultMap>
+	   
+    <sql id="comment_column">
+    	COMMENT_ID,CONTENT,USER_ID,USER_NAME,CREATE_TIME,MODIFY_TIME,STATUS,ARTICLE_ID,FLOOR,ANONY
+    </sql>
+    
+    <select id="queryCommentList" parameterClass="CommentDO" resultMap="commentMap">
+       select <include refid="comment_column"/>  from COMMENT where ARTICLE_ID=#articleId#
+    </select>
+    
+     <select id="queryCommentByCommentId" parameterClass="CommentDO" resultMap="commentMap">
+       select <include refid="comment_column"/>  from COMMENT where COMMENT_ID=#commentId# limit 1,1 
+    </select>
+    
+    <select id="getNextCommentFloor" parameterClass="java.lang.Integer" resultClass="java.lang.Integer">
+       SELECT ifnull(max(FLOOR),0)+1 from COMMENT Where ARTICLE_ID=#articleId#
+    </select>
+    
+    <update id="updateComment" parameterClass="CommentDO">
+      update COMMENT set 
+      MODIFY_TIME=#modifyTime#,
+      STATUS=#status# 
+      where COMMENT_ID=#commentId# and USER_ID=#userId#
+    </update>
+    
+    <insert id="insertComment" parameterClass="CommentDO">
+       insert COMMENT (<include refid="comment_column"/>) 
+       values(
+         #commentId#,#content#,#userId#,#userName#,#createTime#,#modifyTime#,#status#,#articleId#,#floor#,#anony#
+       )
+        <selectKey resultClass="java.lang.Integer" keyProperty="commentId">
+     		 <![CDATA[ SELECT ifnull(max(COMMENT_ID),100)+1 as commentId from COMMENT ]]>
+      </selectKey>
+      
+    </insert>
+    
+</sqlMap>

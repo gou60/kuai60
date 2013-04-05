@@ -1,0 +1,68 @@
+#if("$article.type"=="pic") #set($type="快乐图") #elseif("$article.type"=="mv")#set($type="快乐视") #else #set($type="快乐园") #end
+#set($pageTitle="${type}-快乐人")
+#parse("/vm/top.vm")
+<body> 
+
+<div id="container">
+<div id="center-container">
+#parse("/vm/header.vm")
+
+<div class="body">
+<table id="columns">
+	  <tbody><tr>
+		   <td id="main">
+ 
+ #set($articleDO=$article)
+	  #foreach($article in $articleList)
+   <div class="qiushi_body" style="min-height:200px;" id="article$article.articleId"> 
+		     
+		     <div class="head_pic">
+					       <a href="$Klink.setURI("index.htm").addQueryData("userId",$article.userId)" #if($articleDO.userId==0)target="_blank"#end>
+					       #if("$!{ToolsUtil.getUserInfoByUserId($article.userId).trackId}"!="")
+			        			     #set($userName="快乐人_$article.userId") #else #set($userName="$!{ToolsUtil.getUserInfoByUserId($article.userId).userName}")
+			        #end
+			        
+         <img src="$Klink.setURI("images/icon/$article.userIconUrl()")" class="icon_pic" alt="哈哈" title="$userName">
+       </a>
+     </div>
+     
+     <div class="article_title">
+       #<a href="$Klink.setURI("showArticle.htm").addQueryData("articleId","$article.articleId")" id="url_$article.articleId">$!article.title</a>
+     <div class="title_line" style="width:$ToolsUtil.getTitleLength($!article.title)px;">&nbsp;</div>
+     </div>
+    <div class="thumb article_list">$article.content </div><br clear="both">
+   </div>
+   
+    #parse("/vm/counts.vm")
+  	#end
+  	
+  	#if($!articleList.size()==0)
+  	 <div class="qiushi_body" style="min-height:500px;text-align:center;">
+          到目前为止，你还没有分享过快乐事啊！马上“<a href="fabiao.htm" style="text-decoration:underline;color:#F1AF00;font-size:20px;">分享</a>”
+   </div>
+   <div class="qiushi_counts ">&nbsp;</div>	
+  	#end
+  	
+ ##parse("/vm/pageInfo.vm")
+ 
+ <form name="pageform" id="pageform" action="index.htm?q" method="post">
+ 		   #set($article.pageInfo.pageUrl="http://kuai60.net/index.htm?q")
+   $article.pageInfo.html
+   </form>
+ </td>
+	
+		 <td id="sidebar">
+			   #parse("/vm/sidebar.vm")
+		  </td>
+	 </tr>
+</tbody></table>
+
+</div><!-- body -->
+
+	</div><!-- center-container -->
+
+</div><!-- container --> 
+
+#parse("/vm/bottom.vm")
+</body> 
+</html> 

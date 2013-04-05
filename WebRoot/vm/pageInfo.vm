@@ -1,0 +1,24 @@
+
+#set($pageUrl="$Klink.setURI('index.htm')?")
+#if("$!article.type"!="")
+ #set($pageUrl="${pageUrl}type=$!{article.type}&")
+#end
+
+<div id="pageNav" class="blueFoot">
+       #if($article.pageInfo.currentPage>1)
+       #set($prePage=$math.sub($!article.pageInfo.currentPage,1))
+       <a href="${pageUrl}page=$!prePage")" class="pageBtn">&lt;&lt; 上一页</a>
+       #end
+  #foreach($page in [1..$article.pageInfo.totalPages]) 
+       
+       #if($article.pageInfo.currentPage==$page)
+       <strong>$page</strong>
+       #else
+       <a href="${pageUrl}page=$page")">$page</a>
+       #end
+  #end
+       #if($article.pageInfo.currentPage<$article.pageInfo.totalPages)
+       #set($nextPage=$math.add($article.pageInfo.currentPage,1))
+	          <a href="${pageUrl}page=$nextPage")" class="pageBtn">下一页 &gt;&gt;</a>
+	       #end
+</div>

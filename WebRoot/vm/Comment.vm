@@ -1,0 +1,11 @@
+
+
+ <li id="comment-$commentDO.commentId" data-user_id="223550" data-comment-id="$commentDO.commentId" data-floor="34" class="comment floor-$commentDO.commentId " data-date="$date.format($commentDO.createTime)">
+ <img alt="$commentDO.userName" class="avatar" src="images/icon/$commentDO.userIconUrl()">
+ <a class="reply" href="javascript:replyComment(3423637,223550,34)">ªÿ∏¥</a> 
+ <sup class="floor">$commentDO.floor</sup>  
+<span class="">#if("$!{ToolsUtil.getUserInfoByUserId($commentDO.userId).trackId}"!="")
+			        øÏ¿÷»À_$commentDO.userId #else $!commentDO.userName #end
+		    $commentDO.content<br/></span>
+ </li>
+

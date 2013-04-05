@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<toolbox>
+	<tool>
+		<key>ToolsUtil</key>
+		<scope>application</scope>
+		<class>com.kuaileren.util.ToolsUtil</class>
+	</tool>
+	<tool>
+		<key>StringUtil</key>
+		<scope>application</scope>
+		<class>com.kuaileren.util.StringUtil</class>
+	</tool>
+
+	<tool>
+		<key>date</key>
+		<scope>application</scope>
+		<class>org.apache.velocity.tools.generic.DateTool</class>
+	</tool>
+	<tool>
+		<key>math</key>
+		<scope>application</scope>
+		<class>org.apache.velocity.tools.generic.MathTool</class>
+	</tool>
+
+
+    <tool>  
+        <key>slink</key>  
+        <scope>request</scope>  
+        <class>org.apache.velocity.tools.struts.StrutsLinkTool</class>  
+    </tool>  
+      
+    <tool>  
+        <key>sslink</key>  
+        <scope>request</scope>  
+        <class>org.apache.velocity.tools.struts.SecureLinkTool</class>  
+    </tool>
+	<tool>
+		<key>Klink</key>
+		<scope>request</scope>
+		<class>com.kuaileren.util.KuaiLink</class>
+	</tool>
+
+</toolbox>

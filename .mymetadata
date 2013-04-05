@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="kuai60"
+  id="myeclipse.1315108473673"
+  context-root="/kuai60"
+  j2ee-spec="1.4"
+  archive="kuai60.war">
+  <attributes>
+    <attribute name="webrootdir" value="WebRoot" />
+  </attributes>
+</project-module>
+

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"     
+"http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="vote">
+    <typeAlias alias="VoteDO" type="com.kuaileren.domain.VoteDO" />
+	
+    <resultMap id="voteMap" class="VoteDO">
+    	<result property="voteId" column="VOTE_ID"></result>
+    	<result property="articleId" column="ARTICLE_ID"></result>
+    	<result property="voteType" column="VOTE_TYPE"></result>
+    	<result property="userId" column="USER_ID"></result>
+    	<result property="voteTime" column="VOTE_TIME"></result>
+    </resultMap>
+	   
+    <sql id="vote_column">
+    	VOTE_ID,ARTICLE_ID,VOTE_TYPE,USER_ID,VOTE_TIME
+    </sql>
+
+     <select id="isVoted" parameterClass="VoteDO" resultClass="java.lang.Integer">
+       select count(1) from VOTE  where ARTICLE_ID=#articleId# and USER_ID=#userId#
+    </select>
+    
+    
+    
+    <insert id="insertVote" parameterClass="VoteDO">
+      <selectKey resultClass="java.lang.Integer" type="pre" keyProperty="voteId">
+     		 <![CDATA[ SELECT ifnull(max(VOTE_ID),100)+1 from VOTE ]]>
+      </selectKey>
+      
+       insert VOTE (<include refid="vote_column"/>) 
+       values(
+         #voteId#,#articleId#,#voteType#,#userId#,#voteTime#
+       )
+    </insert>
+    
+</sqlMap>

@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/2/trunk/src/com/kuaileren/util
+END
+StringUtil.java
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/4/trunk/src/com/kuaileren/util/StringUtil.java
+END
+TestClass.java
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/5/trunk/src/com/kuaileren/util/TestClass.java
+END
+GetContentPicture.java
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/6/trunk/src/com/kuaileren/util/GetContentPicture.java
+END
+UniqID.java
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/2/trunk/src/com/kuaileren/util/UniqID.java
+END
+ScaleImage.java
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/2/trunk/src/com/kuaileren/util/ScaleImage.java
+END
+DateUtil.java
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/2/trunk/src/com/kuaileren/util/DateUtil.java
+END
+DigitalUtil.java
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/2/trunk/src/com/kuaileren/util/DigitalUtil.java
+END
+ChineseUtil.java
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/4/trunk/src/com/kuaileren/util/ChineseUtil.java
+END
+FileUtil.java
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/6/trunk/src/com/kuaileren/util/FileUtil.java
+END
+ToolsUtil.java
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/6/trunk/src/com/kuaileren/util/ToolsUtil.java
+END

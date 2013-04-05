@@ -1,0 +1,35 @@
+#set($pageTitle="快乐人")
+#parse("/vm/top.vm")
+
+<body> 
+<div id="container"> 
+<div id="center-container">
+   #parse("/vm/header.vm")
+  
+  
+<div class="login_body" id="">
+   <p><b>人过留名，雁过留声!</b></p>
+   <p>快乐人不需要注册也可以登陆!</p>
+   <p style="color:red;font-size:12px">$!reult.errMsg</p>
+  <form action="$Klink.setURI("doLogin.htm")" name="loginForm" method="post">
+  <input type="hidden" name="redirectUrl" value="$!redirectUrl">
+  
+   <p>你的身份：<input type="text" name="userName" id="userName" value="" class="login_input">(如：北京烤鸭)</p>
+   <p>身份密码：<input type="password" name="password" id="password" value="" class="login_input"><span style="font-size:12px">(以后还想用这个身份的话，请记住这个密码!)</span></p>
+   <p><input type="submit" name="sub_btn" id="sub_btn" value="芝麻开门"  class="login_submit"></p>
+  </form>
+</div> 
+
+<div id="" class="login_counts"></div>
+
+<div style="font-size:12px;width:600px;margin:0px auto;padding-top:10px">
+<ul>
+  <li> ”<b>芝蜜开门</b>“一下就能为你打开快乐之门，并找回曾经的快乐！</li>
+  <li>所有身份必需唯一。</li>
+</div>
+</div>
+#parse("/vm/bottom.vm")
+
+</div>
+</body>
+</html>

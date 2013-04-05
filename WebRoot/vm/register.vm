@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+<head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=GBK" /> 
+  <title>快乐人</title> 
+  <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" /> 
+  <meta name="HandheldFriendly" content="True" /> 
+  <meta name="description" content="" />  
+</head> 
+<body> 
+<div id="container"> 
+   #parse("/vm/top.vm")
+<div id="center-container">
+  <div id="header">
+  </div>
+  
+  
+<div class="login_body " id="article1107991">
+  <h2> <p>还要注册登陆? 你太土啦！<br><br>
+       快乐人不需要注册，也不需要登陆!</p><br>
+   <p>只需要你喊”芝蜜开门“一下就能为你打开你曾经留下的快乐痕迹。</p><br>
+   当然了，如果你想喊“你妈叫你回家吃月饼”也是可以的。<br><br>
+   这里的前提是：你所喊的每一句话必需唯一。</h2>
+</div> 
+<div id="qiushi_counts_1107991" class="counts_login"></div>
+</div>
+#parse("/vm/bottom.vm")
+
+</div>
+</body>
+</html>

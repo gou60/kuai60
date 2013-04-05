@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="GBK"?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<include file="struts-default.xml"></include>
+	
+	<package name="sys" extends="struts-default">
+	<default-action-ref name="pagenotfound"></default-action-ref>  
+
+
+	<global-results>
+		<result name="success">/vm/success.vm</result>
+	</global-results>
+	
+	
+   <action name="pagenotfound"><result>/404.html</result></action>
+   
+		<action name="User_queryUserList" class="com.kuaileren.web.UserAction" method="queryUserList">
+			<result name="success">/vm/UserList.vm</result>
+		</action>
+		
+		<action name="doLogin" class="com.kuaileren.web.UserAction" method="doLogin">
+			<result name="success" type="redirect">${redirectUrl}</result> 
+			<result name="login" type="chain">login</result> 
+		</action>
+		
+		<action name="login" class="com.kuaileren.web.UserAction" method="login">
+			<result name="success">/vm/login.vm</result>
+		</action>
+		
+		<action name="ArticleList" class="com.kuaileren.web.ArticleAction" method="queryArticleList">
+			<result name="success">/vm/ArticleList.vm</result>
+		</action>
+		
+		<action name="search" class="com.kuaileren.web.SearchAction" method="search">
+			<result name="success">/vm/ArticleList.vm</result>
+		</action>
+		
+		<action name="showArticle" class="com.kuaileren.web.ArticleAction" method="showArticle">
+			<result name="success">/vm/article.vm</result>
+		</action>
+		
+		<action name="addArticle" class="com.kuaileren.web.ArticleAction" method="addArticle">
+			 <result name="success" type="redirect">index.htm</result> 
+		</action>
+		
+		<action name="articleVote" class="com.kuaileren.web.ArticleAction" method="articleVote"> 
+		</action>
+		
+		<action name="registerAction" class="com.kuaileren.web.UserAction" method="register">
+			 <result name="success" type="redirect">ArticleList.htm</result> 
+		</action>
+		
+		<action name="comment" class="com.kuaileren.web.CommentAction" method="queryCommentList">
+			 <result name="success">/vm/CommentList.vm</result> 
+		</action>
+		<action name="addComment" class="com.kuaileren.web.CommentAction" method="addComment">
+			 <result name="success">/vm/Comment.vm</result> 
+		</action>
+		
+		<action name="user_views" class="com.kuaileren.web.ArticleAction" method="queryArticleList">
+			 <result name="success">/vm/ArticleList.htm</result> 
+		</action>
+		<action name="upload" class="com.kuaileren.web.UploadAction" method="upload">
+			<result name="success">/vm/upload.vm</result>
+		</action>
+		
+		<action name="logout" class="com.kuaileren.web.UserAction" method="logout">
+			<result name="success" type="redirect">index.htm</result>
+		</action>
+		
+		<action name="kuaileCenter" class="com.kuaileren.web.UserAction" method="kuaileCenter">
+			<result name="success">/vm/KuaileCenter.vm</result>
+		</action>
+		
+		
+		<action name="favorite" class="com.kuaileren.web.ArticleAction" method="favorite"></action>
+
+		<action name="about"><result>/vm/about.vm</result></action>
+		<action name="register"><result>/vm/register.vm</result></action>
+		
+		<action name="menu"><result>/vm/right_menu.vm</result></action>
+		
+		
+		<action name="index"><result type="chain">ArticleList</result></action>
+		<action name="tagCloud"><result>/vm/tag_cloud.vm</result></action>
+		
+		<action name="fabiao"><result>/vm/Fabiao.vm</result></action>
+		<action name="User_register">
+			<result type="chain">User_queryUserList</result>
+		</action>
+		
+		
+		<action name="select" class="com.kuaileren.web.ArticleAction" method="select">
+			<result name="success">/vm/select.vm</result>
+		</action>
+		
+		<action name="access" class="com.kuaileren.web.AccessItemAction" method="access">
+			<result name="success">/vm/access_result.vm</result>
+		</action>
+		
+		
+	</package>
+</struts>

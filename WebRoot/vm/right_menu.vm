@@ -1,0 +1,100 @@
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<style type="text/css">
+.newlook #header{
+float:none;
+*zoom:1;
+}
+
+.newlook #header:after{
+content:".";
+display:block;
+font-size:0;
+line-height:0;
+clear:both;
+visibility:hidden;
+
+}
+.newlook #main{
+float:none;
+
+}
+.newlook #content{
+padding:0;
+border:none;
+background:transparent;
+
+}
+#columns{
+width:100%;
+border:0;
+border-collapse:collapse;
+border-spacing:0;
+
+}
+td#main{
+width:500px;
+padding:20px;
+border:0;
+background:#fff;
+vertical-align:top;
+-moz-border-radius-topleft:10px;
+-webkit-border-top-left-radius:10px;
+-moz-border-radius-bottomleft:10px;
+-webkit-border-bottom-left-radius:10px;
+
+}
+
+
+#container_new{
+width:775px;
+margin:0 auto;
+
+}
+#main{
+width:500px;
+overflow:hidden;
+
+}
+
+#sidebar{
+width:219px;
+padding:20px 0 20px 15px;
+border-left:1px solid #b2d1a3;
+background:#e2f2da;
+vertical-align:top;
+-moz-border-radius-topright:10px;
+-webkit-border-top-right-radius:10px;
+-moz-border-radius-bottomright:10px;
+-webkit-border-bottom-right-radius:10px;
+
+}
+
+body{
+background:#acdae5 url(http://static2.fanfou.com/img/bg/0.png) no-repeat 0 0;
+color:#222;
+font-size:12px;
+line-height:150%;
+
+}
+</style>
+
+##<link rel="stylesheet" href="css/base.css?v=14598c1c" type="text/css" media="screen"/>
+
+
+<div class="newlook" id="container_new">
+<table id="columns">
+	<tbody><tr>
+		<td id="main">
+						
+		</td>
+		<td id="sidebar">
+			
+		</td>
+	</tr>
+</tbody></table>
+
+</div>
+
+</html>

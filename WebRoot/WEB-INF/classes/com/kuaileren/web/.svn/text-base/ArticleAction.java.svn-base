@@ -1,0 +1,209 @@
+package com.kuaileren.web;
+
+import java.util.Date;
+import java.util.List;
+
+import org.apache.commons.lang.StringUtils;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.apache.struts2.ServletActionContext;
+
+import com.kuaileren.common.ArticleResult;
+import com.kuaileren.common.ResultCode;
+import com.kuaileren.domain.ArticleDO;
+import com.kuaileren.service.ArticleService;
+import com.kuaileren.util.DigitalUtil;
+import com.kuaileren.util.GetContentPicture;
+import com.kuaileren.util.ScaleImage;
+import com.kuaileren.util.StringUtil;
+
+public class ArticleAction extends BaseAction {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -689738328041269821L;
+	private static final Log log = LogFactory.getLog(ArticleAction.class);
+
+	private String resultCode = StringUtils.EMPTY;
+	ArticleDO article = new ArticleDO();
+	ArticleResult result = new ArticleResult(false);
+	
+	/**
+	 * 用户信息查询
+	 * @Description :TODO
+	 * @return String
+	 */
+	public String queryArticleList() {
+		try {
+			request = ServletActionContext.getRequest();
+			article.getPageInfo().setCurrentPage(DigitalUtil.paseInt(request.getParameter("page")));
+
+			article.setType(request.getParameter("type"));
+			article.setUserName(request.getParameter("userName"));
+			article.setUserId(DigitalUtil.paseInt(request.getParameter("userId")));
+			articleList = articleService.queryArticleList(article);
+
+			return SUCCESS;
+
+		} catch (Exception e) {
+			log.error(e.getMessage(), e);
+		}
+		return ERROR;
+	}
+	
+	
+	public String addArticle() {
+		try {
+
+			article.setContent(request.getParameter("content"));
+			article.setTitle(request.getParameter("title"));
+			article.setType(GetContentPicture.getArticleType(article
+					.getContent()));
+
+			if (article.hasPic()) {
+				coverPicPath(article);
+			}
+
+			article.setUserId(getUserId());
+			article.setUserName(getUserName());
+			article.setCreateTime(new Date());
+			article.setModifyTime(new Date());
+
+			ArticleResult result = articleService.addArticle(article);
+			if (result.isSuccess()) {
+				article = result.getArticleDO();
+			}
+			
+			return SUCCESS;
+
+		} catch (Exception e) {
+			log.error(e.getMessage(), e);
+		}
+		return ERROR;
+	}
+	
+
+	private void coverPicPath(ArticleDO article) {
+		try{
+		 String targetDirectory = context.getRealPath("/")+"upload\\";
+		 
+		String picPath = GetContentPicture.getPicPath(article.getContent());
+		
+		if(StringUtil.isBlank(picPath))return ;
+		
+		String imagePath = ScaleImage.makeScaleImage(picPath,targetDirectory);
+		
+		String fullPicPath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+request.getContextPath()+"/upload/"+imagePath;
+
+		article.setContent(article.getContent().replaceFirst(picPath, fullPicPath));
+		}catch(Exception e){
+			log.error(e.getMessage(), e);
+		}
+	}
+
+
+	public String favorite(){
+		try {
+			article.setArticleId(DigitalUtil.paseInt(request
+					.getParameter("articleId")));
+			article.setUserId(getUserId());
+			article.setUserName(getUserName());
+			article.setCreateTime(new Date());
+			article.setModifyTime(new Date());
+			article.setFavoriteCount(1);
+
+			result = articleService.favorite(article);
+			if (result.isSuccess()) {
+				article = result.getArticleDO();
+			}
+			
+			return SUCCESS;
+		} catch (Exception e) {
+			log.error(e.getMessage(), e);
+		}
+		return ERROR;
+	}
+	
+	
+	
+	
+	public String articleVote() throws Exception {
+		try {
+
+			article.setAgree(DigitalUtil.paseInt(request.getParameter("agree")));
+			article.setDisAgree(DigitalUtil.paseInt(request.getParameter("disAgree")));
+			article.setArticleId(DigitalUtil.paseInt(request.getParameter("articleId")));
+			article.setUserId(getUserId());
+			article.setUserName(getUserName());
+
+			article.setCreateTime(new Date());
+			article.setModifyTime(new Date());
+
+			result = articleService.articleVote(article);
+			if (result.isSuccess()) {
+				article = result.getArticleDO();
+			}
+			return SUCCESS;
+
+		} catch (Exception e) {
+			log.error(e.getMessage(), e);
+		}
+		return ERROR;
+	}
+	
+	public String showArticle() throws Exception {
+		try {
+			int articleId = DigitalUtil.paseInt(request.getParameter("articleId"));
+			article = articleService.queryArticleByArticleId(articleId);
+			return SUCCESS;
+		} catch (Exception e) {
+			log.error(e.getMessage(), e);
+		}
+		return ERROR;
+
+	}
+
+	public void setResultCode(String resultCode) {
+		this.resultCode = resultCode;
+		
+	}
+	public String getResultCode() {
+		return ResultCode.getResultCodeMessage(resultCode);
+		
+	}
+
+	
+	private ArticleService articleService;
+	private List<ArticleDO> articleList;
+	
+	public List<ArticleDO> getArticleList() {
+		return articleList;
+	}
+	public void setArticleList(List<ArticleDO> articleList) {
+		this.articleList = articleList;
+	}
+	public void setArticleService(ArticleService articleService) {
+		this.articleService = articleService;
+	}
+
+
+	public ArticleDO getArticle() {
+		return article;
+	}
+
+
+	public void setArticle(ArticleDO article) {
+		this.article = article;
+	}
+
+
+	public ArticleResult getResult() {
+		return result;
+	}
+
+
+	public void setResult(ArticleResult result) {
+		this.result = result;
+	}
+	
+}

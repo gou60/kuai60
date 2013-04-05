@@ -1,0 +1,36 @@
+
+<div id="center-container_logo">
+<div id="header"> 
+ <div id="container-nav">
+ 
+      <ul id="nav">
+        <li id="nav_yuan"><a href="$Klink.setURI("index.htm")">&nbsp;</a></li>
+        <li id="nav_tu"><a href="$Klink.setURI("index.htm?type=pic")">&nbsp;</a></li>
+        <li id="nav_shi"><a href="$Klink.setURI("index.htm?type=mv")">&nbsp;</a></li>
+        <li id="nav_fen"><a href="$Klink.setURI("fabiao.htm")">&nbsp;</a></li>
+      </ul>
+      
+    </div>
+   </div>  
+ </div>
+
+#**
+<div id="search">
+
+
+		<div class="tac">
+<form style="padding-bottom:15px;" action="search.htm" method="post">
+<select name="searchItem" class="search_select">
+<option value="content" #if("$searchItem"=="content") selected="selected"#end>全文</option>
+<option value="title" #if("$searchItem"=="title") selected="selected"#end>标题</option>
+<option value="userName" #if("$searchItem"=="userName") selected="selected"#end>作者</option>
+
+</select>
+<input type="text" name="searchText" id="searchText" size="36" value="$!searchText">
+
+<input class="search_submit" value="搜&nbsp;&nbsp;索" type="submit">
+</form>
+		</div>
+</div>
+
+**#

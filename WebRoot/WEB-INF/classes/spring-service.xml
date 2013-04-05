@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd"
+	default-autowire="byName">
+
+	<bean id="userService" class="com.kuaileren.service.UserServiceImpl"></bean>
+	<bean id="articleService" class="com.kuaileren.service.ArticleServiceImpl"></bean>
+	<bean id="commentService" class="com.kuaileren.service.CommentServiceImpl"></bean>
+	
+	 <bean id="writerServer"
+        class="com.kuaileren.service.WriterServerImpl">
+        <property name="indexFileStorePath" value="${listServer.indexFile.storePath}" />
+    </bean>
+    
+    <bean id="searchServer"
+        class="com.kuaileren.service.SearchServerImpl">
+        <property name="indexFileStorePath" value="${listServer.indexFile.storePath}" />
+        <property name="writerServer" ref="writerServer" />  
+    </bean>
+    
+      <bean id="InitServer"
+        class="com.kuaileren.service.InitServerImpl" init-method="doInitAction">
+    </bean>
+    
+    
+    
+    
+</beans> 

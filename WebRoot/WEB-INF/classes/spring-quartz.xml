@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="GBK"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="
+       http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+       http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.0.xsd
+       http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.0.xsd">
+
+
+	<description>
+		定义业务层和集成层对象，包括Service、BO、DAO、JNDI资源
+	</description>
+
+
+	<bean class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+		<property name="triggers">			
+			<list>
+				<ref bean="statisticsJsonTrigger" />
+			</list>
+		</property>
+	</bean>
+	
+	
+	
+	
+	<!--  时间程序 
+	<bean id="accessItemDetailJsonTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail">
+			<ref bean="accessTask" />
+		</property>
+		<property name="cronExpression">
+			<value>0/1 * * * * ? *</value>
+		</property>
+	</bean>
+	-->
+	<!--  
+	<bean id="accessUrlJsonTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail">
+			<ref bean="accessUrlTask" />
+		</property>
+		<property name="cronExpression">
+			<value>0/1 * * * * ? *</value>
+		</property>
+	</bean>
+	 -->
+	
+	
+  <bean id="accessTask" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean"> 
+      <property name="targetObject"> 
+          <ref bean="ppShopSeviceJob"/> 
+      </property> 
+      <property name="targetMethod"> 
+                <value>execute</value> 
+     </property> 
+     <!--定义task为单线程-->  
+    <property name="concurrent" value="false" />
+ </bean>
+ <bean id="accessUrlTask" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean"> 
+      <property name="targetObject"> 
+          <ref bean="ppShopSeviceJob"/> 
+      </property> 
+      <property name="targetMethod"> 
+                <value>accessList</value> 
+     </property> 
+     <!--定义task为单线程-->  
+    <property name="concurrent" value="false" />
+ </bean>
+ 
+ 
+ 
+
+   <bean id="ppShopSeviceJob" class="com.kuaileren.service.PPShopService">
+  </bean>
+  
+  
+	<!--  时间程序 -->
+	<bean id="statisticsJsonTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail">
+			<ref bean="statisticsTask" />
+		</property>
+		<property name="cronExpression">
+			<!--"0 10 10 * * ? *" 每天上午5点触发 -->
+			<value>0 0 5 * * ? *</value>
+		</property>
+	</bean>
+  <bean id="statisticsTask" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean"> 
+      <property name="targetObject"> 
+          <ref bean="statisticsSeviceJob"/> 
+      </property> 
+      <property name="targetMethod"> 
+                <value>execute</value> 
+     </property> 
+     <!--定义task为单线程-->  
+    <property name="concurrent" value="false" />
+ </bean>
+
+   <bean id="statisticsSeviceJob" class="com.kuaileren.service.StatisticsSeviceJob" init-method="execute">
+     <property name="articleService">
+		<ref bean="articleService" />
+	</property>
+  </bean>
+  
+  
+  
+  
+  <!--  时间程序 
+	<bean id="autoVoteJsonTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail">
+			<ref bean="autoVoteTask" />
+		</property>
+		<property name="cronExpression">
+			
+			<value>0 */5 * * * ? *</value>
+		</property>
+	</bean>
+	<bean id="autoVoteTask" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean"> 
+      <property name="targetObject"> 
+          <ref bean="autoVoteSeviceJob"/> 
+      </property> 
+      <property name="targetMethod"> 
+                <value>execute</value> 
+     </property> 
+     
+    <property name="concurrent" value="false" />
+ </bean>
+
+   <bean id="autoVoteSeviceJob" class="com.kuaileren.service.AutoVoteSeviceJob" init-method="execute">
+    <property name="articleDao">
+		<ref bean="articleDao" />
+	</property>
+  </bean>
+  -->
+</beans>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"     
+"http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="favorite">
+    <typeAlias alias="FavoriteDO" type="com.kuaileren.domain.FavoriteDO" />
+	
+    <resultMap id="favoriteMap" class="FavoriteDO">
+    	<result property="favoriteId" column="FAVORITE_ID"></result>
+    	<result property="articleId" column="ARTICLE_ID"></result>
+    	<result property="userId" column="USER_ID"></result>
+    	<result property="favoriteTime" column="FAVORITE_TIME"></result>
+    	<result property="status" column="STATUS"></result>
+    </resultMap>
+	   
+    <sql id="favorite_column">
+    	FAVORITE_ID,ARTICLE_ID,USER_ID,FAVORITE_TIME,STATUS
+    </sql>
+
+     <select id="isFavorite" parameterClass="FavoriteDO" resultClass="java.lang.Integer">
+       select count(1) from FAVORITE  where ARTICLE_ID=#articleId# and USER_ID=#userId#
+    </select>
+
+    
+    <insert id="insertFavorite" parameterClass="FavoriteDO">
+      <selectKey resultClass="java.lang.Integer" type="pre" keyProperty="favoriteId">
+     		 <![CDATA[ SELECT ifnull(max(FAVORITE_ID),100)+1 from FAVORITE ]]>
+      </selectKey>
+      
+       insert FAVORITE (<include refid="favorite_column"/>) 
+       values(
+         #favoriteId#,#articleId#,#userId#,#favoriteTime#,#status#
+       )
+    </insert>
+    
+</sqlMap>

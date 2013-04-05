@@ -1,0 +1,23 @@
+#set($pageTitle="哇！快乐人。。。")
+#parse("/vm/top.vm")
+
+<body> 
+   
+<div id="container"> 
+<div id="center-container">
+
+  #parse("/vm/header.vm")
+  
+<div class="login_body">
+  网站建设中。。。
+</div>
+<div class="login_counts"></div>
+	
+</div>
+
+	</div> 
+</div><!-- container --> 
+
+#parse("/vm/bottom.vm")
+</body> 
+</html> 

@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/2/trunk/src/com/kuaileren/dao
+END
+UserDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/2/trunk/src/com/kuaileren/dao/UserDao.java
+END
+UserDaoImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/2/trunk/src/com/kuaileren/dao/UserDaoImpl.java
+END
+CommentDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/2/trunk/src/com/kuaileren/dao/CommentDao.java
+END
+ArticleDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/5/trunk/src/com/kuaileren/dao/ArticleDao.java
+END
+CommentDaoImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/2/trunk/src/com/kuaileren/dao/CommentDaoImpl.java
+END
+ArticleDaoImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/5/trunk/src/com/kuaileren/dao/ArticleDaoImpl.java
+END
+BaseDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/2/trunk/src/com/kuaileren/dao/BaseDao.java
+END
